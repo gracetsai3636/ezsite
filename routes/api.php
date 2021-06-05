@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Builder\Function_;
+use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,10 @@ Route::group(['namespace' => '\Javck\Ezlaravel\Http\Controllers'], function () {
     Route::post('elements/queryPositions', 'ApiController@queryPositions');
     Route::post('elements/queryElementModes', 'ApiController@queryElementModes');
 });
+
+route::get('/posts',Function(){
+    $articles = Article::get();
+    return $articles;
+});
+
+//新改動
